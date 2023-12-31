@@ -7,6 +7,7 @@ const PokemonCard = ({ datas, title }) => {
                     <div className="pokemon" key={pokemon.key}>
 
                         <button>{pokemon.name}</button>
+                        {/* <p>{pokemon.url}</p> */}
                     </div>
                 ))}
 
