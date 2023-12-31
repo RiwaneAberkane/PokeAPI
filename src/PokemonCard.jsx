@@ -13,7 +13,6 @@ const PokemonCard = ({ datas, title }) => {
                             </div>
                             <button>{pokemon.name}</button>
                         </Link>
-
                     </div>
                 ))}
             </div>
