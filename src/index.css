@@ -2,7 +2,7 @@
   margin: 0;
 }
 
-h1, h2, h3, h4{
+h1, h2, h3{
   font-size: 3rem;
   text-align: center;
   margin: 10px;
@@ -31,3 +31,24 @@ a{
   text-decoration: none;
 }
 
+button{
+  cursor: pointer !important;
+}
+
+/* -------------------------------------- */
+
+.pokemon-list{
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.pokemon button{
+  width: 8rem;
+  text-transform: capitalize;
+  height: 2rem;
+  border-radius: 10px;
+  border: black solid 2px;
+}
