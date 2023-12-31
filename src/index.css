@@ -1,5 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+
+html{
+  background-color: #253239;
+}
+
 *{
   margin: 0;
+  font-family: 'Concert One', 'sans-serif';
+  color: white;
 }
 
 h1, h2, h3{
@@ -8,13 +17,28 @@ h1, h2, h3{
   margin: 10px;
 }
 
+h1{
+  font-family: 'Russo One', sans-serif;
+  color: #FECA1B;
+  text-decoration: underline;
+  text-decoration-color: #3761A8 ;
+  text-underline-offset: 5px;
+  
+  padding: 4px;
+}
+
+h2{
+  font-family: 'Russo One', sans-serif;
+  color: #FECA1B;
+}
+
 a{
   font-size: 1.7rem;
 }
 
 .navbar{
   color: white;
-  background-color: rgb(161, 135, 191);
+  background-color: #EF5350;
   height: 5rem;
   display: flex;
   align-items: center;
@@ -31,13 +55,19 @@ a{
   text-decoration: none;
 }
 
+.nav-link a:hover{
+  color: #FECA1B;
+}
+
 button{
   cursor: pointer !important;
 }
 
-/* -------------------------------------- */
+/* POKEMON LIST-------------------------------------- */
 
 .pokemon-list{
+  width: 80%;
+  margin: auto;
   margin-top: 40px;
   display: flex;
   justify-content: space-around;
@@ -46,9 +76,11 @@ button{
 }
 
 .pokemon button{
+  background-color: #EF5350;
+  font-size: 1rem;
   width: 8rem;
   text-transform: capitalize;
   height: 2rem;
   border-radius: 10px;
-  border: black solid 2px;
+  border: #3761A8 solid 5px;
 }
