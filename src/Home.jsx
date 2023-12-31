@@ -1,11 +1,12 @@
 import PokemonCard from "./PokemonCard";
-import UseFetch from "./useFetch";
+import UseFetch from "./utils/useFetch";
 
 const Home = () => {
-    const { datas: pokemon } = UseFetch("https://pokeapi.co/api/v2/pokemon?limit=100&offset=0")
+    const { datas: pokemon, isLoading } = UseFetch("https://pokeapi.co/api/v2/pokemon?limit=100&offset=0")
     return (
         <div className="home">
-            <PokemonCard datas={pokemon} title={"Liste des POKEMON"} />
+            {isLoading && <div className="isLoading"></div>}
+            {pokemon && !isLoading && <PokemonCard datas={pokemon} title={"Liste des POKEMON"} />}
         </div>
     );
 }
