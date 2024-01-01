@@ -27,7 +27,7 @@ const PokemonCard = ({ datas, title }) => {
                         <Link to={`/details/${pokemon.name}`}>
                             <div>
                                 <img
-                                    src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`}
+                                    src={`https://img.pokemondb.net/artwork/large/${pokemon.name}.jpg`}
                                     alt="Pokemon"
                                 />
                             </div>
