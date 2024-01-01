@@ -123,18 +123,22 @@ input{
   text-align: center;
   width: 15rem;
   height: 2rem;
-  /* border-radius: 30px; */
   border: 2px solid #3761A8;
   color: white;
 }
 
 input[type=text] {
-  color: WHITE;
+  color: black;
   font-size: 1.5rem;
 }
 
-input[type=text]:focus {
-  background-color: #fec91b61;
+input:focus::placeholder {
+  color: transparent;
+}
+
+input::placeholder {
+  color: black;
+
 }
 /* Animation isLoading ...  --------------------------*/
 

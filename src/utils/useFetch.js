@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 const UseFetch = (url) => {
   const [datas, setData] = useState([]);
   const [datasDetails, setDataDetails] = useState([]);
-  const [imgPokemon, setImgPokemon] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setLoading] = useState(true);
 
@@ -15,7 +14,6 @@ const UseFetch = (url) => {
         })
         .then((data) => {
           setData(data.results);
-          setImgPokemon(url);
           setDataDetails(data);
           setLoading(false);
         })
@@ -25,7 +23,7 @@ const UseFetch = (url) => {
     }, 2000);
   }, [url]);
 
-  return { datas, datasDetails, imgPokemon, error, isLoading };
+  return { datas, datasDetails, error, isLoading };
 };
 
 export default UseFetch;
