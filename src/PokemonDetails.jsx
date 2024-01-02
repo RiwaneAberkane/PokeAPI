@@ -5,8 +5,6 @@ const PokemonDetails = () => {
 
     const { name } = useParams();
     const { datasDetails: pokemonDetails, isLoading } = UseFetch("https://pokeapi.co/api/v2/pokemon/" + name);
-    console.log(pokemonDetails);
-
 
     return (
         <div className="pokemonDetails">
