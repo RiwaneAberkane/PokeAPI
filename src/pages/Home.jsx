@@ -4,7 +4,7 @@ import UseFetch from "../utils/useFetch";
 
 const Home = () => {
 
-    const { datas: pokemon, isLoading } = UseFetch("https://pokeapi.co/api/v2/pokemon?limit=50&offset=0")
+    const { datas: pokemon, isLoading } = UseFetch("https://pokeapi.co/api/v2/pokemon?limit=10&offset=0")
     return (
         <div className="home">
             {isLoading && <div className="isLoading"></div>}
