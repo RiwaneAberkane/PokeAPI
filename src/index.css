@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 html{
   background-color: #2F2F2F;
 }
 
-img{
-  width: 130px;
-  height: 130px;
-}
-
 *{
   margin: 0;
-  font-family: 'Concert One', 'sans-serif';
+  font-family: 'Press Start 2P', 'sans-serif';
   color: white;
+}
+
+p, a{
+  font-size: 1rem;
 }
 
 h1, h2, h3{
@@ -23,34 +23,34 @@ h1, h2, h3{
 }
 
 h1{
-  font-family: 'Russo One', sans-serif;
+  font-family: 'Press Start 2P', 'sans-serif';
   color: #FECA1B;
-  text-decoration: underline;
-  text-decoration-color: #3761A8;
-  text-underline-offset: 5px;
-  
+  font-size: 2.5rem;
   padding: 4px;
 }
 
 h2{
-  font-family: 'Russo One', sans-serif;
+  font-family: 'Press Start 2P', 'sans-serif';
+  font-size: 2rem;
+  margin: 30px 0;
   color: #FECA1B;
 }
 
 a{
-  font-size: 1.7rem;
+  font-size: 1rem;
   text-align: center;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
 }
 
 .isLoading{
-  font-family: 'Russo One', sans-serif;
+  font-family: 'Press Start 2P', 'sans-serif';
   color: #FECA1B;
   text-align: center;
-  padding-top: 300px;
+  padding-top: 400px;
   margin: auto;
-  font-size: 3rem;
-
-
+  font-size: 2.7rem;
 }
 
 .navbar{
@@ -84,7 +84,7 @@ button{
 
 
 .pokemonCard{
-  width: 80%;
+  width: 85%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -100,24 +100,40 @@ button{
 
 .pokemon{
   background-color: #888888;
-  width: 10rem;
-  height: 15rem;
+  width: 17rem;
+  height: 17rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
+  
+}
+
+.pokemon:hover{
   border: #FECA1B solid 2px;
 }
 
 
 .pokemon button{
   background-color: transparent;
-  font-size: 1.3rem;
-  width: 8rem;
+  font-size: 1rem;
   text-transform: capitalize;
   height: 2rem;
-  border-radius: 10px;
   border: none;
+}
+
+.buttonTypePokemon {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  text-decoration: none;
+  margin-top: 15px;
+}
+
+
+.buttonTypePokemon button{
+  height: 1.5rem;
+  text-align: center;
+  font-size: 0.7rem;
 }
 
 input{
@@ -130,7 +146,7 @@ input{
 
 input[type=text] {
   color: black;
-  font-size: 1.5rem;
+  font-size: 0.8rem;
 }
 
 input:focus::placeholder {
@@ -141,6 +157,8 @@ input::placeholder {
   color: black;
 
 }
+
+
 /* Animation isLoading ...  --------------------------*/
 
 @keyframes loadingAnimation {
@@ -155,3 +173,77 @@ input::placeholder {
   display: inline-block;
   animation: loadingAnimation 1s infinite;
 }
+
+
+/* Couleur bouton en fonction du type ----------------- */
+
+.buttonTypePokemon .type-grass {
+  background-color: #78c850;
+}
+
+.buttonTypePokemon .type-fire {
+  background-color: #f08030;
+}
+
+.buttonTypePokemon .type-water {
+  background-color: #6890f0;
+}
+
+.buttonTypePokemon .type-electric {
+  background-color: #f8d030;
+}
+
+.buttonTypePokemon .type-ice {
+  background-color: #98d8d8;
+}
+
+.buttonTypePokemon .type-fighting {
+  background-color: #c03028;
+}
+
+.buttonTypePokemon .type-poison {
+  background-color: #a040a0;
+}
+
+.buttonTypePokemon .type-ground {
+  background-color: #e0c068;
+}
+
+.buttonTypePokemon .type-flying {
+  background-color: #a890f0;
+}
+
+.buttonTypePokemon .type-normal {
+  background-color: #a8a878;
+}
+
+.buttonTypePokemon .type-bug {
+  background-color: #a8b820;
+}
+
+.buttonTypePokemon .type-fairy {
+  background-color: #ee99ac;
+}
+
+.buttonTypePokemon .type-psychic {
+  background-color: #f85888;
+}
+
+.buttonTypePokemon .type-rock {
+  background-color: #b8a038;
+}
+
+.buttonTypePokemon .type-dragon {
+  background-color: #7038f8;
+}
+
+.buttonTypePokemon .type-ghost {
+  background-color: #705898;
+}
+
+.buttonTypePokemon .type-steel {
+  background-color: #b8b8d0;
+}
+
+
+/* ----------------------------------------------------- */

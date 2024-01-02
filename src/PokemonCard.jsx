@@ -12,8 +12,6 @@ const PokemonCard = ({ datas, title }) => {
     return (
         <div className="pokemonCard">
             <h2>{title}</h2>
-
-            {/* Search bar */}
             <input
                 type="text"
                 placeholder="Search Pokemon"
@@ -26,19 +24,24 @@ const PokemonCard = ({ datas, title }) => {
                     <div className="pokemon" key={index}>
                         <Link to={`/details/${pokemon.name}`}>
 
-                            <img
+                            {/* <img
                                 src={`https://img.pokemondb.net/artwork/large/${pokemon.name}.jpg`}
+                                alt="Pokemon"
+                            /> */}
+
+                            <img
+                                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
                                 alt="Pokemon"
                             />
 
                             <button>{pokemon.name}</button>
-                            {pokemon.types && pokemon.types.length > 0 && (
-                                pokemon.types.map((type, index) => (
-                                    <div className='buttonRype'>
-                                        <button key={index}>{type.type.name}</button>
-                                    </div>
-                                ))
-                            )}
+                            <div className='buttonTypePokemon'>
+                                {pokemon.types && pokemon.types.length > 0 && (
+                                    pokemon.types.map((type, index) => (
+                                        <button key={index} className={`type-${type.type.name}`}>{type.type.name}</button>
+                                    ))
+                                )}
+                            </div>
                         </Link>
                     </div>
                 ))}
