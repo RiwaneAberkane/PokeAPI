@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+// import { useContext } from 'react'
+// import { PokemonContext } from '../context/PokemonContext';
+// import AddOrRemoveFavoris from './AddOrRemoveFavoris';
 
 const PokemonCard = ({ datas, title }) => {
+    // const { pokemons } = useContext(PokemonContext);
     const [searchTerm, setSearchTerm] = useState('');
 
     // Filter Pokemon data based on search input
@@ -42,6 +46,9 @@ const PokemonCard = ({ datas, title }) => {
                                     ))
                                 )}
                             </div>
+                            {/* <div className='buttonAddOrRemove'>
+                                <AddOrRemoveFavoris pokemonData={pokemons} />
+                            </div> */}
                         </Link>
                     </div>
                 ))}

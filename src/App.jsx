@@ -1,8 +1,8 @@
-import Navbar from "./Navbar";
-import Home from "./Home";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Favorites from "./Favorites";
-import PokemonDetails from "./PokemonDetails";
+import Favorites from "./pages/Favorites";
+import PokemonDetails from "./pages/PokemonDetails";
 
 function App() {
   return (

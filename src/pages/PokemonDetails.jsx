@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import UseFetch from "./utils/useFetch";
+import UseFetch from "../utils/useFetch";
 
 const PokemonDetails = () => {
 
