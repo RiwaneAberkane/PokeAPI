@@ -10,7 +10,7 @@ const PokemonDetails = () => {
         <div className="pokemonDetails">
             {isLoading && <div className="isLoading"></div>}
             {!isLoading &&
-                <div> <h4>Détail de {name} </h4>
+                <div>
                     <p>{pokemonDetails.name}</p>
                     <p>{pokemonDetails.base_experience}</p>
                     <p>{pokemonDetails.weight}</p>
