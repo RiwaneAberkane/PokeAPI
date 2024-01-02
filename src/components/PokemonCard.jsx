@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import addFavs from '../utils/addFavs';
 import { Link } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
-import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
+// import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faHeart);
@@ -52,6 +52,13 @@ const PokemonCard = ({ datas, title }) => {
             <div className="pokemon-list">
                 {filteredPokemon.map((pokemon, index) => (
                     <div className="pokemon" key={index}>
+                        <div
+                            className={`heart-icon ${favorites.some((fav) => fav.id === pokemon.id) ? "favorited" : ""}`}
+                            onClick={() => handleAddToFavorites(pokemon)}
+                            key={pokemon.id}
+                        >
+                            &hearts;
+                        </div>
                         <Link to={`/details/${pokemon.name}`}>
                             <img
                                 src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
@@ -66,12 +73,7 @@ const PokemonCard = ({ datas, title }) => {
                                 )}
                             </div>
                         </Link>
-                        <FontAwesomeIcon
-                            icon={favorites.some((fav) => fav.id === pokemon.id) ? solidHeart : regularHeart}
-                            onClick={() => handleAddToFavorites(pokemon)}
-                            style={{ color: favorites.some((fav) => fav.id === pokemon.id) ? "green" : "red" }}
-                            key={pokemon.id}
-                        />
+
                     </div>
                 ))}
             </div>

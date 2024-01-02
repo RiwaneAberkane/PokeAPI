@@ -100,12 +100,13 @@ button{
 
 .pokemon{
   background-color: #888888;
-  width: 17rem;
-  height: 17rem;
+  width: 12rem;
+  /* height: 17rem;  */
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  flex-direction: column;
+  padding: 5px;
 }
 
 .pokemon:hover{
@@ -247,3 +248,14 @@ input::placeholder {
 
 
 /* ----------------------------------------------------- */
+
+.heart-icon {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 20px; 
+  line-height: 1.5; 
+}
+
+.heart-icon.favorited {
+  color: red;
+}

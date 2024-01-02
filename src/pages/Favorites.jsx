@@ -7,14 +7,14 @@ const Favorites = () => {
     useEffect(() => {
         const storedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
         setFavorites(storedFavorites);
-    }, []);
+    }, [favorites]);
 
     return (
         <div>
             {favorites.length > 0 ? (
                 <div className="favorite-list">
                     <div>
-                        <PokemonCard datas={favorites} title={"Favorites"} />
+                        <PokemonCard datas={favorites} title={"FAVORIS"} />
                     </div>
                 </div>
             ) : (
