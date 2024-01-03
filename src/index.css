@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 html{
@@ -23,9 +22,9 @@ h1, h2, h3{
 }
 
 h1{
-  font-family: 'Press Start 2P', 'sans-serif';
+  font-family: 'Russo One', 'sans-serif';
   color: #FECA1B;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   padding: 4px;
 }
 
@@ -44,6 +43,11 @@ a{
   flex-direction: column;
 }
 
+.pokeBall{
+  width: 40px;
+  height: 40px;
+}
+
 .isLoading{
   font-family: 'Press Start 2P', 'sans-serif';
   color: #FECA1B;
@@ -56,11 +60,18 @@ a{
 .navbar{
   color: white;
   background-color: #F44335;
-  height: 5rem;
+  height: 6rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
+}
+
+.navbar-left{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 .nav-link{
   display: flex;
@@ -101,7 +112,6 @@ button{
 .pokemon{
   background-color: #888888;
   width: 12rem;
-  /* height: 17rem;  */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -273,6 +283,8 @@ input::placeholder {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 
 .pagination button {
