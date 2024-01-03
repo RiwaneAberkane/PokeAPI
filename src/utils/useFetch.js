@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const UseFetch = (url) => {
   const [datas, setDatas] = useState([]);
@@ -9,11 +9,12 @@ const UseFetch = (url) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        setLoading(true);
+
         const response = await fetch(url);
         const data = await response.json();
 
         setDataDetails(data);
-        setLoading(false);
 
         const pokemonDataPromises = data.results.map(async (pokemon) => {
           return fetch(pokemon.url)
@@ -26,15 +27,22 @@ const UseFetch = (url) => {
 
         const pokemonData = await Promise.all(pokemonDataPromises);
         setDatas(pokemonData);
+        setLoading(false);
       } catch (error) {
         setError(error);
+        setLoading(false);
       }
     };
 
-    setTimeout(fetchData, 2000);
+    fetchData();
   }, [url]);
 
-  return { datas, datasDetails, error, isLoading };
+  return {
+    datas,
+    datasDetails,
+    error,
+    isLoading,
+  };
 };
 
 export default UseFetch;

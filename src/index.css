@@ -55,7 +55,7 @@ a{
 
 .navbar{
   color: white;
-  background-color: #EF5350;
+  background-color: #F44335;
   height: 5rem;
   display: flex;
   align-items: center;
@@ -258,4 +258,38 @@ input::placeholder {
 
 .heart-icon.favorited {
   color: red;
+}
+
+.noFavorites{
+  text-align: center;
+  font-size: 2rem;
+  color: #FECA1B;
+  margin-top: 350px;
+}
+
+/* Pagination.css ---------------------------------------- */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: #f44336; 
+  color: #ffffff; 
+  border: none;
+  padding: 10px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.pagination button.active {
+  background-color: #2196f3; 
+}
+
+.pagination button:hover {
+  background-color: #555; 
 }

@@ -2,19 +2,17 @@ import React, { useState, useEffect } from 'react';
 import addFavs from '../utils/addFavs';
 import { Link } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
-// import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import Pagination from './Pagination'; // Assuming you have a Pagination component in the same directory
 
 library.add(faHeart);
 
 const PokemonCard = ({ datas, title }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem('favorites')) || []);
+    const [page, setPage] = useState(1);
+    const pageSize = 50; // Adjust the pageSize as needed
 
-
-    // Filter Pokemon data based on search input
     const filteredPokemon = datas.filter((pokemon) =>
         pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
@@ -27,21 +25,27 @@ const PokemonCard = ({ datas, title }) => {
             : [...favorites, pokemon];
 
         addFavs({ items: datas, i: pokemon.id });
-        // Mettez à jour le tableau des favoris
         setFavorites(updatedFavorites);
-        // Stockez les favoris dans le local storage
         localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
     };
-
 
     useEffect(() => {
         const storedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
         setFavorites(storedFavorites);
     }, []);
 
+    const handlePageChange = (newPage) => {
+        setPage(newPage);
+    };
+
+    const startIndex = (page - 1) * pageSize;
+    const endIndex = startIndex + pageSize;
+    const displayedPokemon = filteredPokemon.slice(startIndex, endIndex);
+
     return (
         <div className="pokemonCard">
             <h2>{title}</h2>
+
             <input
                 type="text"
                 placeholder="Search Pokemon"
@@ -49,8 +53,14 @@ const PokemonCard = ({ datas, title }) => {
                 onChange={(e) => setSearchTerm(e.target.value)}
             />
 
+            <Pagination
+                currentPage={page}
+                totalPages={Math.ceil(filteredPokemon.length / pageSize)}
+                onPageChange={handlePageChange}
+            />
+
             <div className="pokemon-list">
-                {filteredPokemon.map((pokemon, index) => (
+                {displayedPokemon.map((pokemon, index) => (
                     <div className="pokemon" key={index}>
                         <div
                             className={`heart-icon ${favorites.some((fav) => fav.id === pokemon.id) ? "favorited" : ""}`}
@@ -73,7 +83,6 @@ const PokemonCard = ({ datas, title }) => {
                                 )}
                             </div>
                         </Link>
-
                     </div>
                 ))}
             </div>
