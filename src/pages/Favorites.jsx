@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import PokemonCard from '../components/PokemonCard';
+import isEqual from 'lodash/isEqual';
 
 const Favorites = () => {
     const [favorites, setFavorites] = useState([]);
 
     useEffect(() => {
         const storedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
-        setFavorites(storedFavorites);
+
+        // Check if storedFavorites is different from the current favorites state
+        if (!isEqual(storedFavorites, favorites)) {
+            setFavorites(storedFavorites);
+        }
     }, [favorites]);
 
     return (

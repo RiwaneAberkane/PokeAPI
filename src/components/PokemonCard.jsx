@@ -3,7 +3,8 @@ import addFavs from '../utils/addFavs';
 import { Link } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
-import Pagination from './Pagination'; // Assuming you have a Pagination component in the same directory
+import Pagination from './Pagination'; 
+import isEqual from 'lodash/isEqual';
 
 library.add(faHeart);
 
@@ -31,8 +32,12 @@ const PokemonCard = ({ datas, title }) => {
 
     useEffect(() => {
         const storedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
-        setFavorites(storedFavorites);
-    }, []);
+
+        // Check if storedFavorites is different from the current favorites state
+        if (!isEqual(storedFavorites, favorites)) {
+            setFavorites(storedFavorites);
+        }
+    }, [favorites]);
 
     const handlePageChange = (newPage) => {
         setPage(newPage);
