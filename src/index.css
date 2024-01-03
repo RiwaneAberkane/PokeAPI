@@ -123,7 +123,6 @@ button{
   border: #FECA1B solid 2px;
 }
 
-
 .pokemon button{
   background-color: transparent;
   font-size: 1rem;
@@ -140,6 +139,10 @@ button{
   margin-top: 15px;
 }
 
+p{
+  text-transform: capitalize;
+
+}
 
 .buttonTypePokemon button{
   height: 1.5rem;
@@ -187,6 +190,11 @@ input::placeholder {
 
 
 /* Couleur bouton en fonction du type ----------------- */
+
+
+.buttonTypePokemon button{
+  text-transform: capitalize;
+}
 
 .buttonTypePokemon .type-grass {
   background-color: #78c850;
@@ -256,6 +264,10 @@ input::placeholder {
   background-color: #b8b8d0;
 }
 
+.buttonTypePokemon .type-dark {
+  background-color: #705848;
+}
+
 
 /* ----------------------------------------------------- */
 
@@ -304,4 +316,72 @@ input::placeholder {
 
 .pagination button:hover {
   background-color: #555; 
+}
+
+.imgDetails{
+  width: 200px;
+}
+
+.pokemonCardDetails {
+  border: 3px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 60px;
+  background-color: #888888;
+}
+
+.pokemonCardDetails img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.pokemonCardDetails p {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.statsList {
+  list-style: none;
+  padding: 0;
+}
+
+.statsList li {
+  margin: 10px 0;
+}
+
+.statName {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.statBarContainer {
+  background-color: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 2px solid black
+}
+
+.statBar {
+  height: 20px;
+  color: white;
+  text-align: center;
+  line-height: 20px;
+  transition: width 0.5s;
+}
+
+.statBar.green {
+  background-color: green;
+}
+
+.statBar.blue {
+  background-color: blue;
+}
+
+.statBar.red {
+  background-color: red;
 }

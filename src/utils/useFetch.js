@@ -26,6 +26,7 @@ const UseFetch = (url) => {
         });
 
         const pokemonData = await Promise.all(pokemonDataPromises);
+        // console.log(pokemonData);
         setDatas(pokemonData);
         setLoading(false);
       } catch (error) {
