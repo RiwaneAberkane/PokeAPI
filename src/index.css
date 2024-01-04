@@ -55,9 +55,9 @@ a {
   font-family: 'Press Start 2P', 'sans-serif';
   color: #FECA1B;
   text-align: center;
-  padding-top: 400px;
   margin: auto;
   font-size: 2.7rem;
+  margin-top: 350px;
 }
 
 .navbar {
@@ -202,6 +202,8 @@ input::placeholder {
   content: "Pokemon loading...";
   display: inline-block;
   animation: loadingAnimation 1s infinite;
+  margin-top: 0;
+
 }
 
 
@@ -429,6 +431,7 @@ input::placeholder {
   .nav-link {
     flex-direction: column;
     top: 60px;
+    gap: 1rem;
   }
 
   .nav-link a {
@@ -456,11 +459,37 @@ input::placeholder {
     border: none;
   }
 
+  .isLoading {
+    font-size: 2rem;
+    margin-top: 20vh;
+  }
+
+  .pokemonCard {
+    width: 100%
+  }
+
   .pokemon {
-    width: 10rem;
+    width: 10rem
+  }
+
+  .buttonTypePokemon button {
+    height: 1.5rem;
+  }
+
+  .pokemon button {
+    font-size: 0.5rem;
+  }
+
+  .noFavorites {
+    margin-top: 20vh;
   }
 
   .isLoading {
-    font-size: 2rem;
+    margin-top: 20vh;
   }
+
+  .pagination button {
+    font-size: 0.6rem;
+  }
+
 }
