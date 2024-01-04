@@ -1,41 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-html{
+html {
   background-color: #2F2F2F;
 }
 
-*{
+* {
   margin: 0;
   font-family: 'Press Start 2P', 'sans-serif';
   color: white;
 }
 
-p, a{
+p,
+a {
   font-size: 1rem;
 }
 
-h1, h2, h3{
+h1,
+h2,
+h3 {
   font-size: 3rem;
   text-align: center;
   margin: 10px;
 }
 
-h1{
+h1 {
   font-family: 'Russo One', 'sans-serif';
   color: #FECA1B;
   font-size: 3.5rem;
   padding: 4px;
 }
 
-h2{
+h2 {
   font-family: 'Press Start 2P', 'sans-serif';
   font-size: 2rem;
   margin: 30px 0;
   color: #FECA1B;
 }
 
-a{
+a {
   font-size: 1rem;
   text-align: center;
   text-decoration: none;
@@ -43,12 +46,12 @@ a{
   flex-direction: column;
 }
 
-.pokeBall{
+.pokeBall {
   width: 40px;
   height: 40px;
 }
 
-.isLoading{
+.isLoading {
   font-family: 'Press Start 2P', 'sans-serif';
   color: #FECA1B;
   text-align: center;
@@ -57,7 +60,7 @@ a{
   font-size: 2.7rem;
 }
 
-.navbar{
+.navbar {
   color: white;
   background-color: #F44335;
   height: 6rem;
@@ -67,41 +70,43 @@ a{
   padding: 0 20px;
 }
 
-.navbar-left{
+.navbar-left {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
 }
-.nav-link{
+
+.nav-link {
   display: flex;
   gap: 2rem;
 }
 
-.nav-link a{
+.nav-link a {
   color: white;
   text-decoration: none;
 }
 
-.nav-link a:hover{
+.nav-link a:hover {
   color: #FECA1B;
 }
 
-button{
+button {
   cursor: pointer !important;
 }
 
 /* POKEMON LIST-------------------------------------- */
 
 
-.pokemonCard{
+.pokemonCard {
   width: 85%;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.pokemon-list{
+
+.pokemon-list {
   margin-top: 40px;
   display: flex;
   justify-content: center;
@@ -109,7 +114,7 @@ button{
   gap: 5px;
 }
 
-.pokemon{
+.pokemon {
   background-color: #888888;
   width: 12rem;
   display: flex;
@@ -119,11 +124,11 @@ button{
   padding: 5px;
 }
 
-.pokemon:hover{
+.pokemon:hover {
   border: #FECA1B solid 2px;
 }
 
-.pokemon button{
+.pokemon button {
   background-color: transparent;
   font-size: 1rem;
   text-transform: capitalize;
@@ -139,18 +144,18 @@ button{
   margin-top: 15px;
 }
 
-p{
+p {
   text-transform: capitalize;
 
 }
 
-.buttonTypePokemon button{
+.buttonTypePokemon button {
   height: 1.5rem;
   text-align: center;
   font-size: 0.7rem;
 }
 
-input{
+input {
   text-align: center;
   width: 15rem;
   height: 2rem;
@@ -176,10 +181,21 @@ input::placeholder {
 /* Animation isLoading ...  --------------------------*/
 
 @keyframes loadingAnimation {
-  0% { content: "POKEMON LOADING"; }
-  33% { content: "POKEMON LOADING."; }
-  66% { content: "POKEMON LOADING.."; }
-  100% { content: "POKEMON LOADING..."; }
+  0% {
+    content: "POKEMON LOADING";
+  }
+
+  33% {
+    content: "POKEMON LOADING.";
+  }
+
+  66% {
+    content: "POKEMON LOADING..";
+  }
+
+  100% {
+    content: "POKEMON LOADING...";
+  }
 }
 
 .isLoading::after {
@@ -192,7 +208,7 @@ input::placeholder {
 /* Couleur bouton en fonction du type ----------------- */
 
 
-.buttonTypePokemon button{
+.buttonTypePokemon button {
   text-transform: capitalize;
 }
 
@@ -274,15 +290,15 @@ input::placeholder {
 .heart-icon {
   display: inline-block;
   cursor: pointer;
-  font-size: 20px; 
-  line-height: 1.5; 
+  font-size: 20px;
+  line-height: 1.5;
 }
 
 .heart-icon.favorited {
   color: red;
 }
 
-.noFavorites{
+.noFavorites {
   text-align: center;
   font-size: 2rem;
   color: #FECA1B;
@@ -300,8 +316,8 @@ input::placeholder {
 }
 
 .pagination button {
-  background-color: #f44336; 
-  color: #ffffff; 
+  background-color: #f44336;
+  color: #ffffff;
   border: none;
   padding: 10px 15px;
   margin: 0 5px;
@@ -311,14 +327,14 @@ input::placeholder {
 }
 
 .pagination button.active {
-  background-color: #2196f3; 
+  background-color: #2196f3;
 }
 
 .pagination button:hover {
-  background-color: #555; 
+  background-color: #555;
 }
 
-.imgDetails{
+.imgDetails {
   width: 200px;
 }
 
@@ -384,4 +400,16 @@ input::placeholder {
 
 .statBar.red {
   background-color: red;
+}
+
+/* -------------------------------------------- */
+
+.notFound {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.notFound p{
+  text-align: center;
 }

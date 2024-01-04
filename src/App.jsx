@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Favorites from "./pages/Favorites";
 import PokemonDetails from "./pages/PokemonDetails";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/details/:name" element={<PokemonDetails />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </div>
