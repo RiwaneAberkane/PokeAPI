@@ -8,7 +8,6 @@ const Favorites = () => {
     useEffect(() => {
         const storedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
-        // Check if storedFavorites is different from the current favorites state
         if (!isEqual(storedFavorites, favorites)) {
             setFavorites(storedFavorites);
         }

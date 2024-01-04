@@ -12,7 +12,7 @@ const PokemonCard = ({ datas, title }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem('favorites')) || []);
     const [page, setPage] = useState(1);
-    const pageSize = 50; // Adjust the pageSize as needed
+    const pageSize = 50; 
 
     const filteredPokemon = datas.filter((pokemon) =>
         pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -33,7 +33,6 @@ const PokemonCard = ({ datas, title }) => {
     useEffect(() => {
         const storedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
-        // Check if storedFavorites is different from the current favorites state
         if (!isEqual(storedFavorites, favorites)) {
             setFavorites(storedFavorites);
         }
