@@ -1,22 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import addFavs from '../utils/addFavs';
 import { Link } from 'react-router-dom';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
-import Pagination from './Pagination'; 
+import Pagination from './Pagination';
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import isEqual from 'lodash/isEqual';
-
-library.add(faHeart);
 
 const PokemonCard = ({ datas, title }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem('favorites')) || []);
     const [page, setPage] = useState(1);
-    const pageSize = 50; 
+    const [filteredPage, setFilteredPage] = useState(1);
+    const pageSize = 50;
 
     const filteredPokemon = datas.filter((pokemon) =>
         pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
+
+    useEffect(() => {
+        setFilteredPage(1);
+    }, [searchTerm]);
 
     const handleAddToFavorites = (pokemon) => {
         const isAlreadyFavorited = favorites.some((fav) => fav.id === pokemon.id);
@@ -40,9 +42,10 @@ const PokemonCard = ({ datas, title }) => {
 
     const handlePageChange = (newPage) => {
         setPage(newPage);
+        setFilteredPage(newPage);
     };
 
-    const startIndex = (page - 1) * pageSize;
+    const startIndex = (filteredPage - 1) * pageSize;
     const endIndex = startIndex + pageSize;
     const displayedPokemon = filteredPokemon.slice(startIndex, endIndex);
 
@@ -66,13 +69,19 @@ const PokemonCard = ({ datas, title }) => {
             <div className="pokemon-list">
                 {displayedPokemon.map((pokemon, index) => (
                     <div className="pokemon" key={index}>
-                        <div
-                            className={`heart-icon ${favorites.some((fav) => fav.id === pokemon.id) ? "favorited" : ""}`}
-                            onClick={() => handleAddToFavorites(pokemon)}
-                            key={pokemon.id}
-                        >
-                            &hearts;
-                        </div>
+                        {favorites.some((fav) => fav.id === pokemon.id) ? (
+                            <AiFillHeart
+                                className="heart-icon favorited"
+                                onClick={() => handleAddToFavorites(pokemon)}
+                                key={pokemon.id}
+                            />
+                        ) : (
+                            <AiOutlineHeart
+                                className="heart-icon"
+                                onClick={() => handleAddToFavorites(pokemon)}
+                                key={pokemon.id}
+                            />
+                        )}
                         <Link to={`/details/${pokemon.name}`}>
                             <img
                                 src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}

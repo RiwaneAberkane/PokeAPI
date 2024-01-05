@@ -286,19 +286,7 @@ input::placeholder {
   background-color: #705848;
 }
 
-
 /* ----------------------------------------------------- */
-
-.heart-icon {
-  display: inline-block;
-  cursor: pointer;
-  font-size: 20px;
-  line-height: 1.5;
-}
-
-.heart-icon.favorited {
-  color: red;
-}
 
 .noFavorites {
   text-align: center;

@@ -5,7 +5,7 @@ const Navbar = () => {
     return (
         <div className="navbar">
             <div className='navbar-left'>
-                <h1>POKEAPI</h1>
+                <Link to="/"><h1>POKEAPI</h1></Link>
                 <img className='pokeBall' src={pokeball} alt="" />
             </div>
             <div className="nav-link">
